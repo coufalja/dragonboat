@@ -566,9 +566,6 @@ func (t *TCP) serveConn(conn net.Conn) {
 }
 
 func setTCPConn(conn *net.TCPConn) error {
-	if err := conn.SetLinger(0); err != nil {
-		return err
-	}
 	if err := conn.SetKeepAlive(true); err != nil {
 		return err
 	}
